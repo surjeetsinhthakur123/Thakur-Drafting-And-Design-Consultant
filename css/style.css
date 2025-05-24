@@ -99,6 +99,7 @@ ul {
 }
 
 /* ===== Header & Navigation ===== */
+
 /* ===== Header & Navigation Fix ===== */
 header {
   background: #ffffff;
@@ -109,10 +110,7 @@ header {
   right: 0;
   z-index: 1000;
   padding: 10px 5%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 70px;
+  height: 80px;
 }
 
 .header-container {
@@ -122,12 +120,13 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  height: 100%;
 }
 
 .logo {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 15px;
 }
 
 .logo img {
@@ -135,21 +134,36 @@ header {
   width: auto;
 }
 
-.logo h1 {
-  font-size: 1.2rem;
-  color: #2c3e50;
-  font-weight: 700;
+.logo-text {
+  display: flex;
+  flex-direction: column;
   line-height: 1.2;
 }
 
-/* Desktop Menu */
-nav ul {
-  display: flex;
-  list-style: none;
-  gap: 20px;
+.logo-text h1 {
+  font-size: 1.5rem;
+  color: #2c3e50;
+  font-weight: 700;
+  margin: 0;
 }
 
-nav ul li a {
+.logo-text p {
+  font-size: 0.8rem;
+  color: #7f8c8d;
+  margin: 0;
+  letter-spacing: 1px;
+}
+
+/* Desktop Menu */
+.desktop-menu {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+.desktop-menu li a {
   color: #2c3e50;
   font-weight: 500;
   font-size: 1rem;
@@ -158,7 +172,7 @@ nav ul li a {
   position: relative;
 }
 
-nav ul li a::after {
+.desktop-menu li a::after {
   content: '';
   position: absolute;
   bottom: 0;
@@ -169,53 +183,28 @@ nav ul li a::after {
   transition: all 0.3s ease;
 }
 
-nav ul li a:hover::after {
+.desktop-menu li a:hover::after {
   width: 100%;
 }
 
-nav ul li a:hover {
+.desktop-menu li a:hover {
   color: #3498db;
 }
 
 /* Mobile Menu Button */
-.mobile-menu {
+.mobile-menu-btn {
   display: none;
-  font-size: 1.5rem;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
   color: #2c3e50;
   cursor: pointer;
+  padding: 5px;
+  transition: all 0.3s ease;
 }
 
-/* Responsive Fixes */
-@media (max-width: 768px) {
-  .logo h1 {
-    font-size: 1rem;
-  }
-  
-  nav ul {
-    display: none;
-    position: fixed;
-    top: 70px;
-    left: 0;
-    right: 0;
-    background: white;
-    flex-direction: column;
-    padding: 20px;
-    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
-    z-index: 999;
-  }
-  
-  nav ul.show {
-    display: flex;
-  }
-  
-  nav ul li {
-    padding: 10px 0;
-    border-bottom: 1px solid #eee;
-  }
-  
-  .mobile-menu {
-    display: block;
-  }
+.mobile-menu-btn:hover {
+  color: #3498db;
 }
 
 /* Mobile Menu */
@@ -245,6 +234,7 @@ nav ul li a:hover {
 }
 
 .mobile-menu li {
+  padding: 15px 20px;
   border-bottom: 1px solid #f1f1f1;
 }
 
@@ -254,17 +244,15 @@ nav ul li a:hover {
 
 .mobile-menu a {
   display: block;
-  padding: 15px 5%;
+  color: #2c3e50;
   font-weight: 500;
   font-size: 1.1rem;
-  transition: var(--transition);
+  transition: all 0.3s ease;
 }
 
-.mobile-menu a:hover,
-.mobile-menu a:active {
-  background-color: #f8f9fa;
-  color: var(--secondary-color);
-  padding-left: 7%;
+.mobile-menu a:hover {
+  color: #3498db;
+  padding-left: 5px;
 }
 
 /* Overlay */
@@ -278,7 +266,7 @@ nav ul li a:hover {
   z-index: 998;
   opacity: 0;
   visibility: hidden;
-  transition: var(--transition);
+  transition: all 0.3s ease;
 }
 
 .overlay.show {
@@ -286,13 +274,51 @@ nav ul li a:hover {
   visibility: visible;
 }
 
+/* Responsive Styles */
+@media (max-width: 768px) {
+  header {
+    padding: 10px 20px;
+    height: 70px;
+  }
+  
+  .logo-text h1 {
+    font-size: 1.2rem;
+  }
+  
+  .logo-text p {
+    font-size: 0.7rem;
+  }
+  
+  .desktop-menu {
+    display: none;
+  }
+  
+  .mobile-menu-btn {
+    display: block;
+  }
+  
+  .mobile-menu {
+    top: 70px;
+  }
+  
+  .overlay {
+    top: 70px;
+  }
+}
+
 /* Active Menu Item */
 .active {
-  color: var(--secondary-color) !important;
+  color: #3498db !important;
   font-weight: 600 !important;
 }
 
-/* ===== Hero Section ===== */
+/* Prevent scrolling when menu is open */
+.no-scroll {
+  overflow: hidden;
+}
+ 
+
+ /*  === Hero Section ===== */
 .hero {
   background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../images/hero-bg.jpg');
   background-size: cover;
