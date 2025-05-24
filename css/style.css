@@ -99,6 +99,7 @@ ul {
 }
 
 /* ===== Header & Navigation ===== */
+/* ===== Header & Navigation Fix ===== */
 header {
   background: #ffffff;
   box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
@@ -107,22 +108,26 @@ header {
   left: 0;
   right: 0;
   z-index: 1000;
-  padding: 15px 5%;
-  transition: var(--transition);
-}
-
-.header-container {
+  padding: 10px 5%;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  height: 70px;
+}
+
+.header-container {
+  width: 100%;
   max-width: 1200px;
   margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .logo {
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 10px;
 }
 
 .logo img {
@@ -131,62 +136,86 @@ header {
 }
 
 .logo h1 {
-  font-size: 1.3rem;
-  color: var(--primary-color);
+  font-size: 1.2rem;
+  color: #2c3e50;
+  font-weight: 700;
+  line-height: 1.2;
 }
 
 /* Desktop Menu */
-.desktop-menu {
+nav ul {
   display: flex;
   list-style: none;
+  gap: 20px;
 }
 
-.desktop-menu li {
-  margin-left: 30px;
-  position: relative;
-}
-
-.desktop-menu a {
+nav ul li a {
+  color: #2c3e50;
   font-weight: 500;
   font-size: 1rem;
-  transition: var(--transition);
+  transition: all 0.3s ease;
   padding: 5px 0;
   position: relative;
 }
 
-.desktop-menu a::after {
+nav ul li a::after {
   content: '';
   position: absolute;
   bottom: 0;
   left: 0;
   width: 0;
   height: 2px;
-  background: var(--secondary-color);
-  transition: var(--transition);
+  background: #3498db;
+  transition: all 0.3s ease;
 }
 
-.desktop-menu a:hover::after {
+nav ul li a:hover::after {
   width: 100%;
 }
 
-.desktop-menu a:hover {
-  color: var(--secondary-color);
+nav ul li a:hover {
+  color: #3498db;
 }
 
 /* Mobile Menu Button */
-.mobile-menu-btn {
+.mobile-menu {
   display: none;
-  background: none;
-  border: none;
-  font-size: 1.8rem;
-  color: var(--primary-color);
+  font-size: 1.5rem;
+  color: #2c3e50;
   cursor: pointer;
-  padding: 5px;
-  transition: var(--transition);
 }
 
-.mobile-menu-btn:hover {
-  color: var(--secondary-color);
+/* Responsive Fixes */
+@media (max-width: 768px) {
+  .logo h1 {
+    font-size: 1rem;
+  }
+  
+  nav ul {
+    display: none;
+    position: fixed;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background: white;
+    flex-direction: column;
+    padding: 20px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    z-index: 999;
+  }
+  
+  nav ul.show {
+    display: flex;
+  }
+  
+  nav ul li {
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .mobile-menu {
+    display: block;
+  }
 }
 
 /* Mobile Menu */
