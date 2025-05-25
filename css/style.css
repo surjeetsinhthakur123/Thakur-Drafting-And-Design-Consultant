@@ -999,3 +999,222 @@ footer {
         padding: 15px;
     }
 }
+/* Mobile-First Responsive Adjustments */
+@media (max-width: 768px) {
+    /* Header adjustments */
+    header .container {
+        padding: 10px 15px;
+    }
+    
+    .logo h1 {
+        font-size: 1.3rem;
+    }
+    
+    nav ul {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background: white;
+        flex-direction: column;
+        padding: 15px 0;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    nav ul.show {
+        display: flex;
+    }
+    
+    nav ul li {
+        margin: 10px 0;
+        text-align: center;
+    }
+    
+    .mobile-menu {
+        display: block;
+    }
+    
+    /* Hero section */
+    .hero {
+        height: auto;
+        min-height: 80vh;
+        padding: 100px 0 60px;
+    }
+    
+    .hero h2 {
+        font-size: 2.2rem;
+    }
+    
+    .hero p {
+        font-size: 1rem;
+    }
+    
+    /* Section adjustments */
+    section {
+        padding: 50px 0;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+        margin-bottom: 30px;
+    }
+    
+    /* Services grid */
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    /* Stats grid */
+    .stats-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    /* Project gallery */
+    .project-gallery {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Contact container */
+    .contact-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    /* Footer */
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    /* Modal adjustments */
+    .modal-content {
+        width: 95%;
+        margin: 10% auto;
+    }
+    
+    .modal-body {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Team section */
+    .team-member {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Further mobile adjustments */
+    .logo h1 {
+        font-size: 1.1rem;
+    }
+    
+    .hero h2 {
+        font-size: 1.8rem;
+    }
+    
+    .section-title {
+        font-size: 1.6rem;
+    }
+    
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .stat-number {
+        font-size: 2.2rem;
+    }
+    
+    .btn {
+        padding: 10px 20px;
+    }
+    
+    /* Project columns */
+    .projects-columns {
+        flex-direction: column;
+    }
+    
+    /* Social links */
+    .social-links a {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .social-links a img {
+        width: 25px;
+        height: 25px;
+    }
+}
+
+/* Ensure mobile menu is properly styled */
+.mobile-menu {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .mobile-menu {
+        display: block;
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
+    
+    nav ul {
+        display: none;
+    }
+    
+    nav ul.show {
+        display: flex;
+    }
+}
+
+/* Ensure images maintain their aspect ratio */
+img {
+    height: auto;
+    max-width: 100%;
+}
+
+/* Prevent horizontal scrolling */
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+}
+
+/* Maintain tap target sizes for mobile */
+a, button, input, .btn {
+    min-height: 44px;
+    min-width: 44px;
+}
+
+/* Adjust modal for small screens */
+@media (max-width: 480px) {
+    .modal-content {
+        padding: 15px;
+    }
+    
+    .close-modal {
+        right: 15px;
+        top: 5px;
+        font-size: 30px;
+    }
+}
+
+/* Video player adjustments */
+@media (max-width: 768px) {
+    .media-container {
+        height: 200px;
+    }
+    
+    .play-button {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+/* Form input sizing */
+@media (max-width: 480px) {
+    .contact-form input,
+    .contact-form textarea {
+        padding: 10px 12px;
+    }
+}
