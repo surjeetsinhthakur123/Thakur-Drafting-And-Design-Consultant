@@ -42,30 +42,6 @@ document.addEventListener('DOMContentLoaded', function () {
       navMenu.classList.toggle('show');
     });
   }
-  // Mobile Menu Toggle
-document.querySelector('.mobile-menu').addEventListener('click', function() {
-    const nav = document.querySelector('nav ul');
-    nav.classList.toggle('show');
-    
-    // Toggle between hamburger and close icon
-    const icon = this.querySelector('i');
-    if (nav.classList.contains('show')) {
-        icon.classList.remove('fa-bars');
-        icon.classList.add('fa-times');
-    } else {
-        icon.classList.remove('fa-times');
-        icon.classList.add('fa-bars');
-    }
-});
-
-// Close menu when clicking on a link
-document.querySelectorAll('nav ul li a').forEach(link => {
-    link.addEventListener('click', function() {
-        document.querySelector('nav ul').classList.remove('show');
-        document.querySelector('.mobile-menu i').classList.remove('fa-times');
-        document.querySelector('.mobile-menu i').classList.add('fa-bars');
-    });
-});
 
   // Smooth Scrolling for Navigation Links
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
