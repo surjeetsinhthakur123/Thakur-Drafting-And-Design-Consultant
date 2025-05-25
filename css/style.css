@@ -847,47 +847,54 @@ footer {
 /* ===================== */
 /* Mobile Responsiveness */
 /* ===================== */
-
-/* Mobile Menu Fix - Right Aligned */
+ /* Updated Header Styles - Full Name Display */
 @media only screen and (max-width: 768px) {
     header .container {
         display: flex;
         justify-content: space-between;
         align-items: center;
         padding: 10px 15px;
+        flex-wrap: nowrap; /* Prevent wrapping */
     }
 
-    /* Logo on left */
+    /* Logo with full name */
     .logo {
-        flex: 1;
-        min-width: 0; /* Allows text truncation */
-        overflow: hidden;
         display: flex;
         align-items: center;
+        flex-shrink: 1; /* Allows shrinking if needed */
+        min-width: 0; /* Enables text truncation as last resort */
+        overflow: hidden; /* Contains the text */
+    }
+
+    .logo img {
+        height: 40px; /* Slightly smaller for mobile */
+        margin-right: 10px;
+        flex-shrink: 0; /* Prevents image from shrinking */
     }
 
     .logo h1 {
+        font-size: 1.1rem;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
-        font-size: 1.3rem;
         margin: 0;
+        flex-shrink: 1;
     }
 
-    /* Hamburger menu on right */
+    /* Hamburger menu - right side */
     .mobile-menu {
-        display: block !important; /* Force show on mobile */
-        order: 2;
-        font-size: 1.8rem;
+        display: block;
+        font-size: 1.5rem;
         color: var(--primary-color);
         background: none;
         border: none;
         cursor: pointer;
-        padding: 5px 10px;
+        padding: 8px;
         margin-left: 15px; /* Space from logo */
+        flex-shrink: 0; /* Prevents hamburger from shrinking */
     }
 
-    /* Hide desktop nav */
+    /* Navigation menu */
     nav ul {
         display: none;
         position: absolute;
@@ -896,7 +903,7 @@ footer {
         right: 0;
         background: white;
         flex-direction: column;
-        padding: 15px 0;
+        padding: 10px 0;
         margin: 0;
         box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
         z-index: 1000;
@@ -906,7 +913,6 @@ footer {
         display: flex;
     }
 
-    /* Menu items */
     nav ul li {
         text-align: center;
         padding: 0;
@@ -918,21 +924,27 @@ footer {
         padding: 12px 20px;
         color: var(--primary-color);
     }
+}
 
-    /* Close icon when active */
-    .mobile-menu .fa-times {
-        display: none;
+/* Adjustments for very small screens */
+@media only screen and (max-width: 480px) {
+    .logo h1 {
+        font-size: 1rem; /* Slightly smaller font */
     }
-
-    nav ul.show ~ .mobile-menu .fa-bars {
-        display: none;
-    }
-
-    nav ul.show ~ .mobile-menu .fa-times {
-        display: block;
+    
+    .mobile-menu {
+        font-size: 1.3rem;
+        padding: 6px;
     }
 }
-    
+
+/* Desktop styles - ensure full name shows */
+@media only screen and (min-width: 769px) {
+    .logo h1 {
+        white-space: normal; /* Allows text to wrap if needed */
+        overflow: visible;
+    }
+}
     /* Header & Navigation */
     header .container {
         flex-direction: row;
