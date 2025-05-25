@@ -1423,3 +1423,164 @@ nav ul li a:hover {
         padding: 0;
     }
 }
+/* Mobile-First Base Styles */
+body {
+    font-size: 16px;
+    -webkit-text-size-adjust: 100%;
+    touch-action: manipulation;
+}
+
+.container {
+    width: 100%;
+    padding: 0 15px;
+}
+
+section {
+    padding: 40px 0;
+}
+
+.section-title {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+}
+
+.section-title::after {
+    width: 60px;
+    height: 3px;
+    margin: 10px auto;
+}
+
+.btn {
+    padding: 12px 24px;
+    min-width: 120px;
+    font-size: 1rem;
+}
+
+/* Enhanced Touch Targets */
+a, button, input, .service-card {
+    min-height: 48px;
+}
+
+/* Mobile Navigation */
+nav ul {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background: white;
+    flex-direction: column;
+    padding: 20px 0;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+nav ul li a {
+    padding: 12px 20px;
+    font-size: 1rem;
+}
+
+.mobile-menu {
+    display: block;
+    padding: 12px;
+}
+
+/* Optimized Hero Section */
+.hero {
+    min-height: 500px;
+    margin-top: 60px;
+    padding: 20px;
+}
+
+.hero h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+/* Mobile Grid Layouts */
+.services-grid,
+.stats-grid,
+.project-gallery {
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+/* Form Optimization */
+.contact-form input,
+.contact-form textarea,
+.contact-form button {
+    font-size: 1rem;
+    padding: 12px 15px;
+}
+
+/* Footer Adjustments */
+.footer-content {
+    grid-template-columns: 1fr;
+    gap: 30px;
+}
+
+.social-links a {
+    width: 50px;
+    height: 50px;
+    margin: 0 5px;
+}
+
+/* Responsive Media Queries */
+@media (min-width: 768px) {
+    section {
+        padding: 60px 0;
+    }
+    
+    .services-grid,
+    .stats-grid,
+    .project-gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .contact-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 992px) {
+    .mobile-menu {
+        display: none;
+    }
+    
+    nav ul {
+        position: static;
+        flex-direction: row;
+        background: transparent;
+        box-shadow: none;
+        padding: 0;
+        display: flex;
+    }
+    
+    .services-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .stats-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* Accessibility Improvements */
+a:focus,
+button:focus,
+input:focus {
+    outline: 2px solid var(--secondary-color);
+    outline-offset: 2px;
+}
+
+/* Performance Optimizations */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
