@@ -848,125 +848,60 @@ footer {
 /* Mobile Responsiveness */
 /* ===================== */
 
-/* Mobile Menu Styles (Right-Aligned Hamburger) */
 @media only screen and (max-width: 768px) {
-    /* Header adjustments for mobile */
-    header .container {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 10px 15px;
-        position: relative; /* Needed for absolute positioning of dropdown */
+    /* General Adjustments */
+    .container {
+        width: 95%;
+        padding: 0 10px;
     }
-
-    /* Logo stays on left */
-    .logo {
-        order: 1;
-        flex: 1;
-        min-width: 0;
-        overflow: hidden;
+    
+    section {
+        padding: 50px 0;
     }
-
-    .logo h1 {
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
-
-    /* Hamburger button on right */
-    .mobile-menu {
-        order: 2;
-        display: block;
+    
+    .section-title {
         font-size: 1.8rem;
-        color: var(--primary-color);
-        background: none;
-        border: none;
-        cursor: pointer;
-        padding: 8px 12px;
-        z-index: 1001; /* Above other elements */
+        margin-bottom: 30px;
     }
-
-    /* Hide desktop navigation */
+    
+    /* Header & Navigation */
+    header .container {
+        flex-direction: row;
+        padding: 10px 0;
+    }
+    
+    .logo {
+        margin-bottom: 0;
+    }
+    
+    .logo h1 {
+        font-size: 1.3rem;
+    }
+    
     nav ul {
         display: none;
         position: absolute;
-        top: 100%;
+        top: 80px;
         left: 0;
         right: 0;
         background: white;
         flex-direction: column;
-        padding: 15px 0;
-        margin: 0;
+        padding: 20px 0;
         box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-        z-index: 1000;
     }
-
-    /* Show menu when active */
+    
     nav ul.show {
         display: flex;
-        animation: fadeInDown 0.3s ease-out;
     }
-
-    /* Menu items */
+    
     nav ul li {
+        margin: 10px 0;
         text-align: center;
-        padding: 0;
-        margin: 0;
     }
-
-    nav ul li a {
-        display: block;
-        padding: 12px 20px;
-        color: var(--primary-color);
-        transition: all 0.3s ease;
-    }
-
-    nav ul li a:hover {
-        background: var(--light-color);
-        color: var(--secondary-color);
-    }
-
-    /* Close icon when active */
-    .mobile-menu .fa-times {
-        display: none;
-    }
-
-    nav ul.show ~ .mobile-menu .fa-bars {
-        display: none;
-    }
-
-    nav ul.show ~ .mobile-menu .fa-times {
-        display: block;
-    }
-}
-
-/* Animation for dropdown */
-@keyframes fadeInDown {
-    from {
-        opacity: 0;
-        transform: translateY(-10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Extra small devices adjustments */
-@media only screen and (max-width: 480px) {
+    
     .mobile-menu {
-        padding: 6px 10px;
-        font-size: 1.5rem;
+        display: block;
     }
-    
-    .logo h1 {
-        font-size: 1.1rem;
-    }
-    
-    nav ul li a {
-        padding: 10px 15px;
-    }
-}
     
     /* Hero Section */
     .hero {
