@@ -999,3 +999,73 @@ footer {
         padding: 15px;
     }
 }
+/* Updated Mobile Menu Styles */
+@media only screen and (max-width: 768px) {
+    header .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 15px;
+    }
+
+    .logo {
+        order: 1; /* Logo on left */
+        margin-right: auto; /* Pushes everything else to right */
+    }
+
+    .mobile-menu {
+        order: 2; /* Hamburger on right */
+        display: block;
+        margin-left: auto; /* Ensures it stays on right */
+        padding: 10px;
+        font-size: 1.5rem;
+        cursor: pointer;
+        color: var(--primary-color);
+    }
+
+    nav {
+        order: 3; /* Navigation below */
+        width: 100%;
+        display: none;
+    }
+
+    nav ul.show {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        background: white;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        right: 0;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+    }
+
+    nav ul li {
+        text-align: center;
+        padding: 12px 0;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
+    nav ul li a {
+        display: block;
+        padding: 10px 15px;
+    }
+}
+
+/* For very small devices */
+@media only screen and (max-width: 480px) {
+    .logo h1 {
+        font-size: 1.2rem;
+    }
+
+    .mobile-menu {
+        font-size: 1.3rem;
+        padding: 8px;
+    }
+
+    nav ul.show {
+        top: 70px;
+    }
+}
