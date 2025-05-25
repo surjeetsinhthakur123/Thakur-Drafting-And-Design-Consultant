@@ -847,54 +847,46 @@ footer {
 /* ===================== */
 /* Mobile Responsiveness */
 /* ===================== */
- /* Updated Header Styles - Full Name Display */
+/* Mobile Menu Fix - Right Aligned */
 @media only screen and (max-width: 768px) {
     header .container {
         display: flex;
         justify-content: space-between;
         align-items: center;
         padding: 10px 15px;
-        flex-wrap: nowrap; /* Prevent wrapping */
     }
 
-    /* Logo with full name */
+    /* Logo on left */
     .logo {
+        flex: 1;
+        min-width: 0; /* Allows text truncation */
+        overflow: hidden;
         display: flex;
         align-items: center;
-        flex-shrink: 1; /* Allows shrinking if needed */
-        min-width: 0; /* Enables text truncation as last resort */
-        overflow: hidden; /* Contains the text */
-    }
-
-    .logo img {
-        height: 40px; /* Slightly smaller for mobile */
-        margin-right: 10px;
-        flex-shrink: 0; /* Prevents image from shrinking */
     }
 
     .logo h1 {
-        font-size: 1.1rem;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
+        font-size: 1.3rem;
         margin: 0;
-        flex-shrink: 1;
     }
 
-    /* Hamburger menu - right side */
+    /* Hamburger menu on right */
     .mobile-menu {
-        display: block;
-        font-size: 1.5rem;
+        display: block !important; /* Force show on mobile */
+        order: 2;
+        font-size: 1.8rem;
         color: var(--primary-color);
         background: none;
         border: none;
         cursor: pointer;
-        padding: 8px;
+        padding: 5px 10px;
         margin-left: 15px; /* Space from logo */
-        flex-shrink: 0; /* Prevents hamburger from shrinking */
     }
 
-    /* Navigation menu */
+    /* Hide desktop nav */
     nav ul {
         display: none;
         position: absolute;
@@ -903,7 +895,7 @@ footer {
         right: 0;
         background: white;
         flex-direction: column;
-        padding: 10px 0;
+        padding: 15px 0;
         margin: 0;
         box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
         z-index: 1000;
@@ -913,6 +905,7 @@ footer {
         display: flex;
     }
 
+    /* Menu items */
     nav ul li {
         text-align: center;
         padding: 0;
@@ -924,65 +917,20 @@ footer {
         padding: 12px 20px;
         color: var(--primary-color);
     }
-}
 
-/* Adjustments for very small screens */
-@media only screen and (max-width: 480px) {
-    .logo h1 {
-        font-size: 1rem; /* Slightly smaller font */
-    }
-    
-    .mobile-menu {
-        font-size: 1.3rem;
-        padding: 6px;
-    }
-}
-
-/* Desktop styles - ensure full name shows */
-@media only screen and (min-width: 769px) {
-    .logo h1 {
-        white-space: normal; /* Allows text to wrap if needed */
-        overflow: visible;
-    }
-}
-    /* Header & Navigation */
-    header .container {
-        flex-direction: row;
-        padding: 10px 0;
-    }
-    
-    .logo {
-        margin-bottom: 0;
-    }
-    
-    .logo h1 {
-        font-size: 1.3rem;
-    }
-    
-    nav ul {
+    /* Close icon when active */
+    .mobile-menu .fa-times {
         display: none;
-        position: absolute;
-        top: 80px;
-        left: 0;
-        right: 0;
-        background: white;
-        flex-direction: column;
-        padding: 20px 0;
-        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
     }
-    
-    nav ul.show {
-        display: flex;
+
+    nav ul.show ~ .mobile-menu .fa-bars {
+        display: none;
     }
-    
-    nav ul li {
-        margin: 10px 0;
-        text-align: center;
-    }
-    
-    .mobile-menu {
+
+    nav ul.show ~ .mobile-menu .fa-times {
         display: block;
     }
+}
     
     /* Hero Section */
     .hero {
