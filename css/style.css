@@ -848,21 +848,90 @@ footer {
 /* Mobile Responsiveness */
 /* ===================== */
 
+/* Mobile Menu Fix - Right Aligned */
 @media only screen and (max-width: 768px) {
-    /* General Adjustments */
-    .container {
-        width: 95%;
-        padding: 0 10px;
+    header .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 15px;
     }
-    
-    section {
-        padding: 50px 0;
+
+    /* Logo on left */
+    .logo {
+        flex: 1;
+        min-width: 0; /* Allows text truncation */
+        overflow: hidden;
+        display: flex;
+        align-items: center;
     }
-    
-    .section-title {
+
+    .logo h1 {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-size: 1.3rem;
+        margin: 0;
+    }
+
+    /* Hamburger menu on right */
+    .mobile-menu {
+        display: block !important; /* Force show on mobile */
+        order: 2;
         font-size: 1.8rem;
-        margin-bottom: 30px;
+        color: var(--primary-color);
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 5px 10px;
+        margin-left: 15px; /* Space from logo */
     }
+
+    /* Hide desktop nav */
+    nav ul {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: white;
+        flex-direction: column;
+        padding: 15px 0;
+        margin: 0;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+    }
+
+    nav ul.show {
+        display: flex;
+    }
+
+    /* Menu items */
+    nav ul li {
+        text-align: center;
+        padding: 0;
+        margin: 0;
+    }
+
+    nav ul li a {
+        display: block;
+        padding: 12px 20px;
+        color: var(--primary-color);
+    }
+
+    /* Close icon when active */
+    .mobile-menu .fa-times {
+        display: none;
+    }
+
+    nav ul.show ~ .mobile-menu .fa-bars {
+        display: none;
+    }
+
+    nav ul.show ~ .mobile-menu .fa-times {
+        display: block;
+    }
+}
     
     /* Header & Navigation */
     header .container {
