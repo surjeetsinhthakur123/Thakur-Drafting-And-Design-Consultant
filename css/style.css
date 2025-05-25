@@ -847,77 +847,73 @@ footer {
 /* ===================== */
 /* Mobile Responsiveness */
 /* ===================== */
-
-/* Updated Mobile Menu Styles */
+/* Mobile Menu - Right Aligned */
 @media only screen and (max-width: 768px) {
     header .container {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        flex-wrap: wrap;
         padding: 10px 15px;
     }
 
     .logo {
-        order: 1; /* Logo on left */
-        margin-right: auto; /* Pushes everything else to right */
+        order: 1;
+        flex: 1;
+        min-width: 200px;
     }
 
     .mobile-menu {
-        order: 2; /* Hamburger on right */
+        order: 2;
         display: block;
-        margin-left: auto; /* Ensures it stays on right */
-        padding: 10px;
-        font-size: 1.5rem;
+        font-size: 1.8rem;
         cursor: pointer;
         color: var(--primary-color);
+        padding: 5px 10px;
     }
 
     nav {
-        order: 3; /* Navigation below */
+        order: 3;
         width: 100%;
         display: none;
     }
 
     nav ul.show {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
+        display: block;
         background: white;
-        position: absolute;
-        top: 80px;
-        left: 0;
-        right: 0;
-        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-        z-index: 1000;
+        width: 100%;
+        margin-top: 15px;
+        border-top: 1px solid #eee;
     }
 
     nav ul li {
         text-align: center;
         padding: 12px 0;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        border-bottom: 1px solid #f5f5f5;
     }
 
     nav ul li a {
         display: block;
-        padding: 10px 15px;
+        padding: 10px;
     }
 }
 
-/* For very small devices */
-@media only screen and (max-width: 480px) {
-    .logo h1 {
-        font-size: 1.2rem;
+/* Hero Section Mobile Adjustments */
+@media only screen and (max-width: 768px) {
+    .hero {
+        height: auto;
+        padding: 120px 0 80px;
     }
 
-    .mobile-menu {
-        font-size: 1.3rem;
-        padding: 8px;
+    .hero h2 {
+        font-size: 2rem;
     }
 
-    nav ul.show {
-        top: 70px;
+    .hero p {
+        font-size: 1rem;
+        padding: 0 15px;
     }
-}   
+}
     /* Header & Navigation */
     header .container {
         flex-direction: row;
