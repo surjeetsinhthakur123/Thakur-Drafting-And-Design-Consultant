@@ -1218,3 +1218,105 @@ a, button, input, .btn {
         padding: 10px 12px;
     }
 }
+/* About Section Mobile Optimization */
+.about-content {
+    display: block;
+    width: 100%;
+}
+
+.about-content p {
+    margin-bottom: 1.2em;
+    font-size: 1rem;
+    line-height: 1.6;
+    text-align: justify;
+    hyphens: auto;
+    word-wrap: break-word;
+}
+
+.usp-section {
+    flex-direction: column;
+    gap: 30px;
+    margin: 40px 0;
+}
+
+.usp-list {
+    width: 100%;
+}
+
+.usp-list li {
+    margin: 15px 0;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.usp-image {
+    width: 100%;
+    order: -1; /* Moves image to top on mobile */
+}
+
+.usp-image img {
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+}
+
+.highlight {
+    font-size: 1.1rem;
+    padding: 20px;
+    margin-top: 30px;
+    line-height: 1.6;
+}
+
+.team {
+    flex-direction: column;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.team-member {
+    max-width: 100%;
+    margin-bottom: 20px;
+}
+
+.team-member img {
+    width: 150px;
+    height: 150px;
+}
+
+/* Responsive adjustments for tablets */
+@media (min-width: 768px) {
+    .about-content p {
+        font-size: 1.1rem;
+    }
+    
+    .usp-section {
+        flex-direction: row;
+        gap: 50px;
+    }
+    
+    .usp-image {
+        width: 50%;
+        order: 0;
+    }
+    
+    .team {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .team-member {
+        max-width: 45%;
+    }
+}
+
+/* Desktop adjustments */
+@media (min-width: 992px) {
+    .about-content p {
+        font-size: 1.2rem;
+    }
+    
+    .team-member {
+        max-width: 30%;
+    }
+}
